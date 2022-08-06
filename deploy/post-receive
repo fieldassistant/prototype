@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+GIT_DIR="$(realpath $GIT_DIR)"
+
+cd ..
+
+umask 002
+
+echo "DH: pwd: $(pwd)"
+echo "DH: $(git --version)"
+
+./deploy/run.sh || exit $?
+
+echo
+echo "DH: Complete."
+echo
+exit 0
