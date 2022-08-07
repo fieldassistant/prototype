@@ -29,8 +29,8 @@ export function TemplatesView() {
                 If you have a set of fields you always use, feel free to send
                 them through and they can be included here.
                 <br/>
-                <a href="mailto:bugman@gwilyn.com">
-                    bugman@gwilyn.com
+                <a href="mailto:hello@fieldassistant.app">
+                    hello@fieldassistant.app
                 </a>
             </div>
         </div>
