@@ -17,11 +17,6 @@ declare global {
         text?: string;
         title?: string;
     }
-    
-    interface Navigator {
-        share?: (data: WebShare) => Promise<void>;
-        canShare?: (data: WebShare) => boolean;
-    }
 }
 
 
@@ -52,7 +47,7 @@ export function ExportView() {
                 await navigator.share(data)
             }
         }
-        catch (error) {
+        catch (error: any) {
             console.log(error, error.message);
         }
     }
@@ -100,7 +95,7 @@ export function ExportView() {
                 entry.position.longitude,
                 entry.position.elevation,
                 entry.collector || "",
-                ...data,
+                ...(data || []),
             );
         }
         
