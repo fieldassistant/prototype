@@ -37,10 +37,12 @@ registerRoute(
         ],
     }),
 );
-    
+
 // Push-state behaviour
-setDefaultHandler(async () => (
-    await caches.match("/") || Response.error()
+setDefaultHandler(async (context) => (
+    context.url.pathname === '/migrate.php'
+        ? await fetch(context.url)
+        : (await caches.match("/") || Response.error())
 ));
 
 setCatchHandler(async () => (
